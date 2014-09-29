@@ -1,6 +1,0 @@
-#include "Aalgo.c"
-#include "Ahash.c"
-#include "Alognode.c"
-#include "Aop.c"
-#include "Aphynode.c"
-#include "Asearch.c"

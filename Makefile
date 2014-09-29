@@ -60,7 +60,7 @@ profilec:
 	make 'GPROF_FLAGS=-pg' all
 
 tags:
-	$(TAGS) */*.[ch]
+	$(TAGS) */*.[cpph]
 
 
 qproc.tar:

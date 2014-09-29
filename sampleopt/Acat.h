@@ -1,7 +1,7 @@
 #ifndef ACAT_H
 #define ACAT_H
 
-#include <iostream.h>
+#include <iostream>
 #include <assert.h>
 #include <Aconsts.h>
 #include <math.h>

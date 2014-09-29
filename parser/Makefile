@@ -1,4 +1,4 @@
-SRCS = query.c
+SRCS = query.cpp
 HDRS = Bbogus.h Bexecinfo.h Bextent.h Bprojlist.h Bparsetree.h By.tab.h \
        Bopcodes.h
 OBJS = query.o

@@ -198,7 +198,7 @@ ASetComplement (const Aset_t<SetElementType> &s);
 // this function should not be here.
 // it should be in Bprint.c in the bogus directory.
 // but CC does not like that, so...
-#include <iostream.h>
+#include <iostream>
 
 template <class SetElementType> 
 void Bprintset (ostream &os, Aset_t<SetElementType> set);

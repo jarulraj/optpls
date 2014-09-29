@@ -4,7 +4,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
-#include <iostream.h>
+
+#include <iostream>
+
+using namespace std;
 
 class Badt_t {
 private:

@@ -2,7 +2,7 @@
 #define ACOST_H
 
 #include <Aopdefs.h>
-#include <iostream.h>
+#include <iostream>
 
 class Aphynode_t;
 

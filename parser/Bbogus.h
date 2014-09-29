@@ -5,7 +5,7 @@
 #include <Aptree.h>
 #include <Afunc.h>
 #include <assert.h>
-#include <strstream.h>
+#include <sstream>
 
 #include <stdlib.h>
 #include <sys/time.h>

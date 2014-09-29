@@ -5,8 +5,8 @@
 #include <sys/time.h>
 #include <sys/resource.h>
 #include <assert.h>
-#include <iostream.h>
-#include <iomanip.h>
+#include <iostream>
+#include <iomanip>
 
 extern "C" {
   int gettimeofday (struct timeval *, struct timezone *);
@@ -89,10 +89,10 @@ inline void Arusage_t::print (ostream &os) const
 
   int maxrss = (int) anint ((double)after.ru_maxrss*Akb_per_page);
 
-  os << "User time (secs.)  : " << user_time << endl;
-  os << "System time (secs.): " << sys_time << endl;
-  os << "Total time (secs.) : " << total_time << endl;
-//  os << "Max. RSS (kB)      : " << maxrss << endl;
+  os << "User time (secs.)  : " << user_time << std::endl;
+  os << "System time (secs.): " << sys_time << std::endl;
+  os << "Total time (secs.) : " << total_time << std::endl;
+//  os << "Max. RSS (kB)      : " << maxrss << std::endl;
 }
 
 inline ostream &operator<< (ostream &os, const Arusage_t &rusage)

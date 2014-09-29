@@ -1,7 +1,7 @@
 #ifndef ASEARCH_H
 #define ASEARCH_H
 
-#include <iostream.h>
+#include <iostream>
 
 #include <Aglob_vars.h>
 

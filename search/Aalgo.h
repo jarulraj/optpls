@@ -1,13 +1,13 @@
 #ifndef AALGO_H
 #define AALGO_H
 
-#include <Aopdefs.h>		// provided by user
+#include "Aopdefs.h"		// provided by user
 
-#include <Alist.h>
+#include "Alist.h"
+#include "Aop.h"
+
 #include <string.h>
-#include <Aop.h>
-
-#include <iostream.h>
+#include <iostream>
 #include <stdlib.h>
 
 
@@ -90,7 +90,7 @@ public:
 
 
   virtual void Apply (Alognode_t *lognode, Aphynode_t **inputs) {
-    cerr << "error: Aalgo_t::Apply called" << endl; exit (1);
+    std::cerr << "error: Aalgo_t::Apply called" << std::endl; exit (1);
   }		// this function should construct all the physical nodes
                 // of the given logical node which can result from the 
                 // application of this algorithm to the given physical nodes.

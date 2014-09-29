@@ -1,7 +1,7 @@
 #ifndef ALIST_H
 #define ALIST_H
 
-#include <iostream.h>
+#include <iostream>
 #include <assert.h>
 
 /***************************************************************************

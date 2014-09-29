@@ -1,11 +1,11 @@
 #ifndef AOP_H
 #define AOP_H
 
-#include <Aopdefs.h> // supplied by DBI
+#include "Aopdefs.h" // supplied by DBI
 
 #include <stdlib.h>
 
-#include <Alist.h>
+#include "Alist.h"
 
 class Alogprop_t; // to take care of 
 class Aalgo_t;	    // the forward 

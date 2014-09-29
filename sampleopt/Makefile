@@ -1,4 +1,4 @@
-SRCS = opt.c main.c
+SRCS = opt.cpp main.cpp
 HDRS = Aattr.h Adbrel.h Alogprop.h Aphyprop.h \
        Abitmap.h Afunc.h Amiscops.h Apred.h \
        Acat.h Aglob_vars.h Aopdefs.h Aptree.h \

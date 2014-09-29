@@ -1,4 +1,4 @@
-SRCS = apg.c
+SRCS = apg.cpp
 HDRS = Aalgo.h   Ahash.h     Alognode.h  Aop.h       Aphynode.h  Asearch.h
 OBJS = apg.o
 CLEANABLES = $(OBJS) 

@@ -1,7 +1,7 @@
 #ifndef FUNC_H
 #define FUNC_H
 
-#include <iostream.h>
+#include <iostream>
 #include <string.h>
 #include <assert.h>
 

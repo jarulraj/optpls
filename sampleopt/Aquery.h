@@ -1,7 +1,7 @@
 #ifndef AQUERY_H
 #define AQUERY_H
 
-#include <iostream.h>
+#include <iostream>
 
 #include <Aset.h>
 #include <Alist.h>

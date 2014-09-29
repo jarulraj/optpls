@@ -1,7 +1,7 @@
 #ifndef APTREE_H
 #define APTREE_H
 
-#include <iostream.h>
+#include <iostream>
 // #include <stdarg.h>
 #include <Alist.h>
 #include <Aset.h>

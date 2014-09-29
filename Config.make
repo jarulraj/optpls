@@ -1,5 +1,5 @@
-BASE = /local.tom/optpls
-WISH = /s/std/bin/wish
+BASE = /home/parallels/git/optpls
+WISH = /usr/bin/wish
 
 
 #### You probably don't need to change anything down here ###
@@ -9,14 +9,11 @@ A_OPT = $(BASE)/sampleopt
 A_QUERY = $(BASE)/parser
 A_TCL = $(BASE)/tclstuff
 
-
-
-CC = g++
-MACHINE_FLAG = -DA_SPARC
-GPROF_FLAGS = 
-CFLAGS = -g $(INCLUDES) $(MACHINE_FLAG) $(GPROF_FLAGS)
+CC = g++ $(CPPFLAGS)
+INCLUDES = -I$(A_APG) -I$(A_OPT) -I$(A_QUERY)
+CPPFLAGS = -g $(INCLUDES) 
 MAKE_DEPEND_FILE = Makefile.depend
-MAKECMD = $(MAKE) 'GPROF_FLAGS=$(GPROF_FLAGS)'
+MAKECMD = $(MAKE) 
 TAGS = etags --c++ 
 AR = ar
 ARFLAGS = ruv
@@ -25,4 +22,3 @@ LIB_QPROC = $(BASE)/libqproc.a
 
 MAKE_DEPEND_COMMAND = $(CC) $(CFLAGS) -M $(SRCS) > $(MAKE_DEPEND_FILE)
 
-INCLUDES = -I$(A_APG) -I$(A_OPT) -I$(A_QUERY)
