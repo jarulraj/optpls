@@ -37,7 +37,8 @@ Bexec_info_t::~Bexec_info_t (void)
 
 void Bexec_info_t::init (Aphynode_t *n, Aset_t<Aattr_t> &pattrs, int t, int i)
 {
-  assert (_node == n);
+  _node = n;
+  assert(_node);
   _algo = _node->GetAlgo ();
   _op = _node->GetParent ()->GetOp ();
   _indent = i;
