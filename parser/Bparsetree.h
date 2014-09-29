@@ -31,7 +31,7 @@ public:
     select_star, select_all, select_dist, identifier, rel_var, rel_name, 
     predicate, equal, not_equal, less, less_equal, greater, greater_equal, 
     overlaps, not_overlaps, oid_ref, bool_expr, between, not_between,
-    not, and, or, unary_plus, unary_minus, plus, minus, times, div,
+    not_op, and_op, or_op, unary_plus, unary_minus, plus, minus, times, div,
     literal, reference, invoke_method, func_call, attref, relref, oid, rel_oid,
     integer, real, string, const_expr, asc, dsc, 
     asc_idx_attref, dsc_idx_attref, col_typename,
@@ -39,7 +39,7 @@ public:
     attr_update_list, expr_list, from_list, 
     attr_or_rel_name, arg_list, groupby_list, orderby_list,
     set_order_by_list, col_list, col_name, col_number, filename_list,
-    filename_id, filename_str, idx_attr_list, col_typename_list, typename,
+    filename_id, filename_str, idx_attr_list, col_typename_list, type_name,
     value_list;
 
   enum type_t {

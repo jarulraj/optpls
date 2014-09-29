@@ -122,14 +122,14 @@ Aptree_t Apred_t::rewrite (const Bexec_info_t &exec_info) const
 void Afunc_t::generate_name (const Aptree_t &ptree,
 			     char *name, int num) const
 {
-  ostrstream name_stream (name, A_MAXNAMELEN);
+  std::stringstream name_stream (name);
   name_stream << "no name" << '%' << num << '\0';
 }
 
 void Aattref_t::generate_name (const Aptree_t &ptree,
 				char *name, int num) const
 {
-  ostrstream name_stream (name, A_MAXNAMELEN);
+  std::stringstream name_stream (name);
   name_stream << _attr->name () << '$' << _attr->rel ()->rel_var () 
 	      << '%' << num << '\0';
 }
@@ -137,7 +137,7 @@ void Aattref_t::generate_name (const Aptree_t &ptree,
 void Af_apply_t::generate_name (const Aptree_t &ptree,
 				char *gen_name, int num) const
 {
-  ostrstream name_stream (gen_name, A_MAXNAMELEN);
+  std::stringstream name_stream (gen_name);
   if (Aglob_vars()->cat->is_method (funcid ()))
     if (ptree.arg (0)->func ()->type () == Afunc_t::attref)
       {

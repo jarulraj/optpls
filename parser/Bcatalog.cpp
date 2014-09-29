@@ -98,7 +98,7 @@ void Acat_t::set_pointers (void)
   for (i=0; i<_numsets; i++)
     {
       _oset_t &set = _osets[i];
-      set.otypeid = find_type_by_name (set.typename);
+      set.otypeid = find_type_by_name (set.type_name);
       if (set.is_index || set.has_index)
 	set.idx_or_setid = find_set_by_name (set.idx_or_set_name);
       else
@@ -169,7 +169,7 @@ void Acat_t::_otype_t::read (istream &is)
 
 void Acat_t::_oset_t::read (istream &is)
 {
-  is >> ws >> name >> typename >> cardinality;
+  is >> ws >> name >> type_name >> cardinality;
   Bboolread (is, has_index);
   Bboolread (is, is_index);
   is >> ws >> idx_pathname >> ws >> idx_or_set_name >> ws >> idx_type;

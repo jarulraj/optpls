@@ -9,9 +9,9 @@ A_OPT = $(BASE)/sampleopt
 A_QUERY = $(BASE)/parser
 A_TCL = $(BASE)/tclstuff
 
-CC = g++ $(CPPFLAGS)
+CC = g++ $(CXXFLAGS)
 INCLUDES = -I$(A_APG) -I$(A_OPT) -I$(A_QUERY)
-CPPFLAGS = -g $(INCLUDES) 
+CXXFLAGS = -g $(INCLUDES) -Wno-write-strings 
 MAKE_DEPEND_FILE = Makefile.depend
 MAKECMD = $(MAKE) 
 TAGS = etags --c++ 

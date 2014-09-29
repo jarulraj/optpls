@@ -18,10 +18,10 @@ lib :
 	@(echo making lib; cd ..; $(MAKECMD) lib)
 	
 opt : lib $(LIB_QPROC) main.o
-	$(CC) $(CFLAGS) -o $@ main.o $(LIB_QPROC) -lm
+	$(CC) $(CXXFLAGS) -o $@ main.o $(LIB_QPROC) -lm
 
 opt.pure : lib $(LIB_QPROC) main.o
-	$(PURIFY) $(CC) $(CFLAGS) -o $@ main.o $(LIB_QPROC) -lm
+	$(PURIFY) $(CC) $(CXXFLAGS) -o $@ main.o $(LIB_QPROC) -lm
 
 profile :
 	@(cd ..; make profile)

@@ -43,7 +43,8 @@ Bastnode_t &Bastnode_t::flatten (void)
 
   // first count the number of children.
   int num_child = 0;
-  for (Bastnode_t *tmp = this; tmp->nargs () == 2; tmp = &tmp->arg (0))
+  Bastnode_t *tmp;
+  for (tmp = this; tmp->nargs () == 2; tmp = &tmp->arg (0))
     num_child++;
   
   assert (tmp->nargs () == 1);	// the leaf node.
@@ -84,7 +85,7 @@ void Bparser_state_t::set_error (int line_no, char *msg)
 {
   _error = 1;
   
-  ostrstream error_stream (_error_str, sizeof (_error_str));
+  std::stringstream error_stream (_error_str);
   error_stream << "Error: line " << line_no << ", " << msg << '\0';
 }
 

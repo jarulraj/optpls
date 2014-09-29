@@ -20,7 +20,7 @@ public:
   virtual void delete_data (void) {delete [] _adt_val; _adt_val=0; _size=0;}
   virtual void ascii_to_mem (const char *str) = 0;
   virtual double get_numeric_val (void) const {assert (!"not numeric type");}
-  virtual print (ostream &os) const {assert (!"printing unknown adt");}
+  virtual void print (ostream &os) const {assert (!"printing unknown adt");}
   char *adt_val (void) const {return _adt_val;}
   int size (void) const {return _size;}
 };
@@ -34,7 +34,7 @@ public:
   virtual void ascii_to_mem (const char *str) {init (atoi (str));}
   int int_val (void) const {return _int_val;}
   virtual double get_numeric_val (void) const {return (double)int_val ();}
-  virtual print (ostream &os) const {os << int_val ();}
+  virtual void print (ostream &os) const {os << int_val ();}
 };
 
 class Breal_t : public Badt_t {
@@ -46,7 +46,7 @@ public:
   virtual void ascii_to_mem (const char *str) {init (atof (str));}
   float real_val (void) const {return _real_val;}
   virtual double get_numeric_val (void) const {return (double)real_val ();}
-  virtual print (ostream &os) const {os << real_val ();}
+  virtual void print (ostream &os) const {os << real_val ();}
 };
 
 class Bstring_t : public Badt_t {
@@ -54,7 +54,7 @@ public:
   char *string_val (void) const {return adt_val ();}
   virtual void ascii_to_mem (const char *str);
   int string_len (void) const {return size ();}
-  virtual print (ostream &os) const {os << string_val ();}
+  virtual void print (ostream &os) const {os << string_val ();}
 };
 
 /***************************************************************************

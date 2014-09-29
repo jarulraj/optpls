@@ -251,7 +251,11 @@ main.o: main.cpp Acat.h /usr/include/c++/4.7/iostream \
  /usr/include/x86_64-linux-gnu/sys/time.h \
  /usr/include/x86_64-linux-gnu/sys/resource.h \
  /usr/include/x86_64-linux-gnu/bits/resource.h \
- /usr/include/c++/4.7/iomanip /home/parallels/git/optpls/search/Asearch.h \
+ /usr/include/c++/4.7/iomanip /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
+ /home/parallels/git/optpls/search/Asearch.h \
  /home/parallels/git/optpls/search/Aop.h \
  /home/parallels/git/optpls/search/Aopdefs.h \
  /home/parallels/git/optpls/search/Alognode.h \
@@ -268,8 +272,5 @@ main.o: main.cpp Acat.h /usr/include/c++/4.7/iostream \
  /home/parallels/git/optpls/parser/Bbogus.h \
  /home/parallels/git/optpls/sampleopt/Aquery.h \
  /usr/include/c++/4.7/sstream /usr/include/c++/4.7/bits/sstream.tcc \
- /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
- /usr/include/x86_64-linux-gnu/bits/environments.h \
- /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
  /home/parallels/git/optpls/parser/Bparsetree.h \
  /home/parallels/git/optpls/parser/Bopcodes.h

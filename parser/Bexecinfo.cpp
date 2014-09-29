@@ -37,7 +37,7 @@ Bexec_info_t::~Bexec_info_t (void)
 
 void Bexec_info_t::init (Aphynode_t *n, Aset_t<Aattr_t> &pattrs, int t, int i)
 {
-  assert (_node = n);
+  assert (_node == n);
   _algo = _node->GetAlgo ();
   _op = _node->GetParent ()->GetOp ();
   _indent = i;
@@ -55,8 +55,10 @@ void Bexec_info_t::init (Aphynode_t *n, Aset_t<Aattr_t> &pattrs, int t, int i)
 
 void Aget_tmp_filename (char *filename, int max_chars)
 {
-  ostrstream ostr (filename, max_chars);
-  ostr << "tmp" << Aglob_vars()->filename_counter++ << '\0';
+  // XXX ostrstream ostr (filename, max_chars);
+
+  std::ofstream fout(filename);
+  fout << "tmp" << Aglob_vars()->filename_counter++ << '\0';
   return;
 }
 
@@ -97,7 +99,7 @@ Aptree_t Bexec_info_t::set_to_ptree (const Aset_t<Apred_t> &c_preds)
       Aptree_t left_ptree = ptree;
       Aptree_t right_ptree = preds.CurrentElement ()->rewrite (*this);
       Aptree_t args[2] = {left_ptree, right_ptree};
-      Aboolfunc_t *and_func = new Aboolfunc_t (Afunc_t::and);
+      Aboolfunc_t *and_func = new Aboolfunc_t (Afunc_t::and_op);
       assert (and_func);
       ptree.init (and_func, 2, args);
     }

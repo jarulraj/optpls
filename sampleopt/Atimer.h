@@ -7,33 +7,18 @@
 #include <assert.h>
 #include <iostream>
 #include <iomanip>
+#include <unistd.h>
 
+/*
 extern "C" {
   int gettimeofday (struct timeval *, struct timezone *);
   int getrusage (int who, struct rusage *rusage);
   int getpagesize (void);
 }
+*/
 
-
-#ifdef A_ZIPPY
-typedef int Asec_t;
-typedef int Ausec_t;
-#endif
-
-#ifdef A_DEC_STATION
 typedef long int Asec_t;
 typedef long int Ausec_t;
-#endif
-
-#ifdef A_SPARC
-typedef long int Asec_t;
-typedef long int Ausec_t;
-#endif
-
-#ifdef A_HP
-typedef unsigned long int Asec_t;
-typedef long int Ausec_t;
-#endif
 
 class Arusage_t {
 private:
@@ -87,7 +72,7 @@ inline void Arusage_t::print (ostream &os) const
     (double)diff.ru_stime.tv_sec+(double)diff.ru_stime.tv_usec/1e6;
   double total_time = user_time + sys_time;
 
-  int maxrss = (int) anint ((double)after.ru_maxrss*Akb_per_page);
+  int maxrss = (int) ceil((double)after.ru_maxrss*Akb_per_page);
 
   os << "User time (secs.)  : " << user_time << std::endl;
   os << "System time (secs.): " << sys_time << std::endl;
@@ -111,7 +96,7 @@ class Atimer_t {
   void print (ostream &os) const;
   void time (struct timeval *t) const;
   void time (struct timeval &t) const;
-  void time (Asec_t &diff_sec, Ausec_t &diff_usec) const;
+  void time (time_t &diff_sec, suseconds_t &diff_usec) const;
 };
 
 
@@ -127,7 +112,7 @@ inline Atimer_t::Atimer_t (void)
   restart ();
 }
 
-inline void Atimer_t::time (Asec_t &diff_sec, Ausec_t &diff_usec) const
+inline void Atimer_t::time (time_t &diff_sec, suseconds_t &diff_usec) const
 {
   struct timezone tz;
   tz.tz_minuteswest = tz.tz_dsttime = 0;

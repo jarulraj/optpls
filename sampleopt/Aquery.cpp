@@ -169,7 +169,7 @@ void Aquery_t::compute_operations_array (void)
   _op_tuprefs = new Aset_t<Aptree_t>[_numoperations]; assert (_op_tuprefs);
   _op_mats = new Aset_t<Aptree_t>[_numoperations]; assert (_op_mats);
 
-  for (i=0; i<_numoperations; i++)
+  for (unsigned int i=0; i<_numoperations; i++)
     {
       Aptree_t *oprn = &_operations[i];
       if (oprn->is_attref ())

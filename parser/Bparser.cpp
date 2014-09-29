@@ -1235,7 +1235,7 @@ case 48:
 case 49:
 {
 			  yyval.init (Bastnode_t::Predicate,
-			           Bastnode_t::not, 
+			           Bastnode_t::not_op,
 			           1, &yyvsp[0], yyvsp[-1].line ());
 			;
     break;}
@@ -1243,7 +1243,7 @@ case 50:
 {
 			  Bastnode_t args[2] = {yyvsp[-2], yyvsp[0]};
 			  yyval.init (Bastnode_t::Predicate,
-			           Bastnode_t::and, 
+			           Bastnode_t::and_op,
 			           2, args, yyvsp[-2].line ());
 			;
     break;}
@@ -1251,7 +1251,7 @@ case 51:
 {
 			  Bastnode_t args[2] = {yyvsp[-2], yyvsp[0]};
 			  yyval.init (Bastnode_t::Predicate,
-			           Bastnode_t::or, 
+			           Bastnode_t::or_op,
 			           2, args, yyvsp[-2].line ());
 			;
     break;}
@@ -1745,7 +1745,7 @@ case 119:
     break;}
 case 120:
 {
-			  yyval.init (Bastnode_t::Typename, Bastnode_t::typename,
+			  yyval.init (Bastnode_t::Typename, Bastnode_t::type_name,
 				   1, &yyvsp[0], yyvsp[0].line ());
 			;
     break;}

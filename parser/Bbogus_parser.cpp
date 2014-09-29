@@ -292,10 +292,9 @@ istream &operator>> (istream &is, Afunc_t *&func)
 
   is >> ws >> str;
   if (strcmp (str, "and") == 0)
-    func = new Aboolfunc_t (Afunc_t::and);
+    func = new Aboolfunc_t (Afunc_t::and_op);
   else if (strcmp (str, "or") == 0)
-    func = new Aboolfunc_t (Afunc_t::or);
-
+    func = new Aboolfunc_t (Afunc_t::or_op);
   else if (strcmp (str, "=") == 0)
     func = new Aclose_relop_t (Afunc_t::eq);
   else if (strcmp (str, "!=") == 0)
@@ -346,10 +345,10 @@ void write_func (ostream &os, const Afunc_t *func, const Aptree_t &ptree)
     case Afunc_t::empty:
       os << "empty";
       break;
-    case Afunc_t::and:
+    case Afunc_t::and_op:
       os << *ptree.arg (0) << " AND " << *ptree.arg (1);
       break;
-    case Afunc_t::or:
+    case Afunc_t::or_op:
       os << *ptree.arg (0) << " AND " << *ptree.arg (1);
       break;
     case Afunc_t::lt:
@@ -428,10 +427,10 @@ ostream &operator<< (ostream &os, const Afunc_t *func)
     case Afunc_t::empty:
       str = "empty";
       break;
-    case Afunc_t::and:
+    case Afunc_t::and_op:
       str = "and";
       break;
-    case Afunc_t::or:
+    case Afunc_t::or_op:
       str = "or";
       break;
     case Afunc_t::lt:

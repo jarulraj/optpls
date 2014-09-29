@@ -62,7 +62,8 @@ public:
   static attr_type_t bogus_adt (void) {return (attr_type_t)-1;}
   attr_type_t str_to_attr_type (const char *str);
 
-  static int is_numeric (attr_type_t a) {assert (0); return 0;}
+  // XXX Already defined
+  //static int is_numeric (attr_type_t a) {assert (0); return 0;}
 
   typedef _idx_type_t idx_type_t;
   static idx_type_t btree (void) {return _btree;}
@@ -105,7 +106,7 @@ private:
   class _oset_t {
   public:
     char name[A_MAXNAMELEN];
-    char typename[A_MAXNAMELEN];
+    char type_name[A_MAXNAMELEN];
     otypeid_t otypeid;		// for above typename. (not for index).
     long int cardinality;
     int has_index;

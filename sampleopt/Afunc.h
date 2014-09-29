@@ -19,7 +19,8 @@ class Afunc_t {
 public:
   enum type_t {
     empty = 0,
-      and, or, not,
+      // XXX and, or and not are keywords
+      and_op, or_op, not_op,
       lt, gt, leq, geq, eq, neq, between, not_between,
       literal, oidref, relattr, attref,
       tuplevar, tupleref,
@@ -33,6 +34,9 @@ private:
 public:
   Afunc_t (type_t t = unknown) {_type = t;}
   type_t type (void) const {return _type;}
+
+  // XXX Destructor
+  virtual ~Afunc_t() {}
 
   virtual Afunc_t *duplicate (void) const;
   virtual void replace_relattrs (Aptree_t &ptree);
@@ -82,7 +86,7 @@ public:
 class Anot_t : public Afunc_t {
 private:
 public:
-  Anot_t (void) : Afunc_t (not) {}
+  Anot_t (void) : Afunc_t (not_op) {}
   virtual Afunc_t *duplicate (void) const;
   virtual Aseldesc_t seldesc (const Aptree_t &ptree,
 			     const Alognode_t *lognode) const;

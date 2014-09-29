@@ -82,7 +82,8 @@ void Bquery_stmt_op_t::convert (Bastnode_t &node, Aquery_t &query)
   if (query._is_select_star)
     {
       query._numattrs = 0;	// initialize
-      for (int i=0; i<query._numrels; i++)
+      int i;
+      for (i=0; i<query._numrels; i++)
 	query._numattrs += query.rel (i)->numattrs ();
 
       query._attrs = new Aquery_t::attr_t[query._numattrs];
@@ -181,12 +182,12 @@ Aptree_t Bop_t::ast_to_ptree (Bastnode_t &node)
   else if (this == Bastnode_t::not_between)
     func = new Arange_t (Afunc_t::not_between);
 
-  else if (this == Bastnode_t::not)
+  else if (this == Bastnode_t::not_op)
     func = new Anot_t ();
-  else if (this == Bastnode_t::and)
-    func = new Aboolfunc_t (Afunc_t::and);
-  else if (this == Bastnode_t::or)
-    func = new Aboolfunc_t (Afunc_t::or);
+  else if (this == Bastnode_t::and_op)
+    func = new Aboolfunc_t (Afunc_t::and_op);
+  else if (this == Bastnode_t::or_op)
+    func = new Aboolfunc_t (Afunc_t::or_op);
 
   else 
     assert (!"unknown relop");

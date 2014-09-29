@@ -243,9 +243,9 @@ Aseldesc_t Aboolfunc_t::seldesc (const Aptree_t &ptree,
   Aseldesc_t s2 = ptree.arg (1)->seldesc (lognode);
   Aseldesc_t retval;
 
-  if (type () == and)
+  if (type () == and_op)
     retval.selectivity = s1.selectivity * s2.selectivity;
-  else if (type () == or)
+  else if (type () == or_op)
     retval.selectivity = 
       s1.selectivity + s2.selectivity + s1.selectivity * s2.selectivity;
   else
