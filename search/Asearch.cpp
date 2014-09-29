@@ -136,6 +136,10 @@ Asearch_t::ExpandNode (Alognode_t *node)
 	      Aphynode_t *opt_plan = node->GetPhyNodes ().FirstElement ();
 	      Aphynode_t *not_opt_plan = 
 		optimumnode->GetPhyNodes ().FirstElement ();
+
+	      std::cout<<"OPT PLAN ::"<< opt_plan->GetPhyProps ()->GetCost () << std::endl;
+        std::cout<<"NOT_OPT PLAN ::"<< not_opt_plan->GetPhyProps ()->GetCost () << std::endl;
+
 	      assert (opt_plan->GetPhyProps ()->GetCost () <
 		      not_opt_plan->GetPhyProps ()->GetCost ());
 	    }

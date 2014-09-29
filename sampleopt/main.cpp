@@ -375,8 +375,12 @@ int main (int argc, char *argv[])
   Aglob_vars()->parser_state = &parser_state;
 
   // set up the catalogs
-  ifstream catfile (".catalog");
-  assert (!!catfile);
+  std::ifstream catfile (".catalog");
+  if (!catfile.is_open()) {
+    std::cout << "Error opening catalog";
+    exit(1);
+  }
+  //assert (!!catfile);
   catalog.read (catfile);
 
   

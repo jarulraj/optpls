@@ -1,2 +1,6 @@
 
-tclstuff/showplan
+*.o
+sampleopt
+showplan
+*core
+*.a

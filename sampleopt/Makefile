@@ -6,7 +6,7 @@ HDRS = Aattr.h Adbrel.h Alogprop.h Aphyprop.h \
        Acost.h Alist.h Aoptions.h Arel.h \
        Aseldesc.h Aselect.h Aset.h Atimer.h
 
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.cpp=.o)
 CLEANABLES = $(OBJS) opt
 
 default : opt
