@@ -1,0 +1,6 @@
+#include "Aalgo.cpp"
+#include "Ahash.cpp"
+#include "Alognode.cpp"
+#include "Aop.cpp"
+#include "Aphynode.cpp"
+#include "Asearch.cpp"
